@@ -91,7 +91,6 @@ public class RentApartmentServiceImpl implements RentApartmentService {
     @Override
     public BookingDateResponse showApartmentWithOutBookingId(Long id) {
         ApartmentEntity apartmentEntity = apartmentRepository.findById(id).get();
-
         ApartmentInfoResponseModel apartmentModel = rentApartmentMapper.apartmentModel(apartmentEntity, apartmentEntity.getAddressEntity());
         return new BookingDateResponse(apartmentModel, APARTMENT_FREE_BOOKING);
     }
